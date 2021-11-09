@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmarmier <lmarmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:19:40 by lmarmier          #+#    #+#             */
-/*   Updated: 2021/11/02 13:32:22 by lmarmier         ###   ########lyon.fr   */
+/*   Created: 2021/11/02 13:48:07 by lmarmier          #+#    #+#             */
+/*   Updated: 2021/11/02 14:43:23 by lmarmier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha (int c)
+void	*ft_memset(void *str, int c, int len)
 {
-	if ((c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	int				i;
+	unsigned char	*str2;
+
+	str2 = str;
+	i = 0;
+	while (i < len)
+	{
+		str2[i] = (unsigned char)c;
+		i++;
+	}
+	str2[i] = 0;
+	return (str);
 }

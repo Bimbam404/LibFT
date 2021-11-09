@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmarmier <lmarmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 12:19:40 by lmarmier          #+#    #+#             */
-/*   Updated: 2021/11/02 13:32:22 by lmarmier         ###   ########lyon.fr   */
+/*   Created: 2021/11/02 14:47:28 by lmarmier          #+#    #+#             */
+/*   Updated: 2021/11/02 15:01:12 by lmarmier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha (int c)
+void	ft_bzero(void *str, int len)
 {
-	if ((c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z'))
-		return (1);
+	int				i;
+	unsigned char	*str2;
+
+	str2 = str;
+	i = 0;
+	while (i < len)
+	{
+		str2[i] = 0;
+		i++;
+	}
 	return (0);
 }
