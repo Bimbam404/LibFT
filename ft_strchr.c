@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmarmier <lmarmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:04:45 by lmarmier          #+#    #+#             */
-/*   Updated: 2021/11/09 12:50:46 by lmarmier         ###   ########lyon.fr   */
+/*   Created: 2021/11/09 13:25:13 by lmarmier          #+#    #+#             */
+/*   Updated: 2021/11/09 13:59:39 by lmarmier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+char	*ft_strchr(const char *s, int c)
 {
-	int					i;
-	unsigned char		*dst2;
-	const unsigned char	*src2;
+	int	i;
 
-	dst2 = dst;
-	src2 = src;
 	i = 0;
-	while (i < (int)len)
+	while (s[i - 1] != 0)
 	{
-		dst2[i] = src2[i];
+		if (s[i] == c)
+			return ((char *) &s[i]);
 		i++;
 	}
-	dst2[i] = 0;
-	return (dst);
+	return (0);
 }

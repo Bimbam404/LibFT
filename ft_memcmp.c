@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmarmier <lmarmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:04:45 by lmarmier          #+#    #+#             */
-/*   Updated: 2021/11/09 12:50:46 by lmarmier         ###   ########lyon.fr   */
+/*   Created: 2021/11/09 15:05:37 by lmarmier          #+#    #+#             */
+/*   Updated: 2021/11/09 15:18:19 by lmarmier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int					i;
-	unsigned char		*dst2;
-	const unsigned char	*src2;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
 
-	dst2 = dst;
-	src2 = src;
+	ss1 = s1;
+	ss2 = s2;
 	i = 0;
-	while (i < (int)len)
-	{
-		dst2[i] = src2[i];
+	while (ss1[i] == ss2[i] && ss1[i] != '\0' && ss2[i] != '\0' && i < n - 1)
 		i++;
-	}
-	dst2[i] = 0;
-	return (dst);
+	return (ss1[i] - ss2[i]);
 }

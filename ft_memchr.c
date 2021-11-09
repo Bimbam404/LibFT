@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmarmier <lmarmier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 16:04:45 by lmarmier          #+#    #+#             */
-/*   Updated: 2021/11/09 12:50:46 by lmarmier         ###   ########lyon.fr   */
+/*   Created: 2021/11/09 14:19:02 by lmarmier          #+#    #+#             */
+/*   Updated: 2021/11/09 15:02:59 by lmarmier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
+
 {
 	int					i;
-	unsigned char		*dst2;
-	const unsigned char	*src2;
+	const unsigned char	*s2;
 
-	dst2 = dst;
-	src2 = src;
+	s2 = s;
 	i = 0;
-	while (i < (int)len)
+	while (s2[i] != 0 && i < n)
 	{
-		dst2[i] = src2[i];
+		if (s2[i] == c)
+			return ((void *) &s2[i]);
 		i++;
 	}
-	dst2[i] = 0;
-	return (dst);
+	if (c == 0 && i < n)
+		return ((void *) &s2[i]);
+	return (0);
 }
